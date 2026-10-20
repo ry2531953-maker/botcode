@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070a12">
+<title>AM PREMIUM SELAX × YUND DEV</title>
+<style>
+:root{--bg:#070a12;--panel:#0d1421;--panel2:#111c2b;--line:#203448;--text:#eaf5ff;--muted:#8ca4b8;--neon:#39f5c5;--blue:#4dbbff;--purple:#a78bfa;--pink:#ff61c7;--yellow:#ffd166;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#11453d66,transparent 35%),radial-gradient(ellipse at 100% 10%,#22265d55,transparent 35%),var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--neon);outline-offset:2px}
+.app{max-width:1240px;margin:auto;padding:15px 15px 95px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:11px}.logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--neon),var(--blue));color:#03130f;display:grid;place-items:center;font-weight:1000;box-shadow:0 0 26px #39f5c533}.brand h1{font-size:15px;letter-spacing:.12em;margin:0;line-height:1.2}.brand p{font-size:10px;letter-spacing:.15em;color:var(--muted);margin:4px 0 0}.topright{display:flex;align-items:center;gap:8px}.pill{font-size:10px;color:var(--neon);border:1px solid #20564e;background:#0b2423;padding:7px 10px;border-radius:99px;white-space:nowrap;font-weight:850}.dot{display:inline-block;width:7px;height:7px;background:var(--neon);border-radius:50%;box-shadow:0 0 12px var(--neon);margin-right:5px;animation:pulse 1.5s infinite}
+.hero{position:relative;overflow:hidden;border:1px solid #234a4b;border-radius:23px;padding:23px;margin-bottom:15px;background:linear-gradient(120deg,#102d2d,#0d1523 62%,#19162e);box-shadow:0 15px 45px #0003}.hero:after{content:"YD";position:absolute;right:22px;top:5px;font-size:clamp(75px,12vw,145px);font-weight:1000;letter-spacing:-.1em;color:#39f5c509;pointer-events:none}.eyebrow{color:var(--neon);font-size:10px;font-weight:900;letter-spacing:.2em}.hero h2{font-size:clamp(27px,5vw,43px);line-height:1.07;letter-spacing:-.045em;margin:8px 0 11px;position:relative;z-index:1}.hero h2 span{color:var(--neon);text-shadow:0 0 20px #39f5c522}.hero p{color:#a8c0d0;max-width:700px;font-size:12px;margin:0}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative;z-index:1}
+.btn{border:1px solid #2a4055;background:#142235;color:var(--text);border-radius:10px;padding:10px 13px;font-size:12px;font-weight:800;transition:transform .18s,border-color .18s}.btn:hover{transform:translateY(-1px);border-color:var(--neon)}.btn:active{transform:scale(.98)}.btn.primary{background:linear-gradient(110deg,var(--neon),#8df8df);color:#04130f;border:0}.btn.blue{background:#10334a;color:#a6e3ff;border-color:#205773}.btn.sm{padding:7px 9px;font-size:10px}
+.notice{font-size:11px;color:#ffe7a8;background:#211b10;border:1px solid #66542d;padding:10px 12px;border-radius:12px;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}.panel{min-width:0;overflow:hidden;background:linear-gradient(155deg,#101a29f5,#0b111df7);border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 12px 32px #0002}.span-8{grid-column:span 8}.span-4{grid-column:span 4}.span-6{grid-column:span 6}.span-12{grid-column:span 12}
+.panelhead{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-bottom:1px solid #1c2e40;background:#0d1623}.paneltitle{font-size:12px;font-weight:900;letter-spacing:.08em;display:flex;align-items:center;gap:8px}.iconbox{width:27px;height:27px;border:1px solid #24554d;background:#102b29;color:var(--neon);border-radius:8px;display:grid;place-items:center;font-weight:900}.tag{font-size:9px;color:var(--neon);border:1px solid #24584e;padding:4px 7px;border-radius:7px;font-weight:900}
+.pad{padding:14px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{padding:12px;background:#09111b;border:1px solid #1b3042;border-radius:12px}.stat label{display:block;font-size:10px;color:var(--muted)}.stat strong{font-size:23px;letter-spacing:-.04em}.stat strong em{font-style:normal;color:var(--neon)}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}label{font-size:11px;color:#b7cad8;font-weight:750}input,textarea{width:100%;min-width:0;background:#080e17;border:1px solid #263b4e;border-radius:10px;padding:11px;color:var(--text);outline:none}input:focus,textarea:focus{border-color:var(--neon);box-shadow:0 0 0 3px #39f5c518}input::placeholder,textarea::placeholder{color:#5d7488}.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1}.muted{font-size:11px;color:var(--muted)}
+.log{font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;background:#060a10;border:1px solid #1c2c3b;border-radius:10px;padding:11px;min-height:100px;max-height:170px;overflow:auto;color:#91adbf;overflow-wrap:anywhere}.log p{margin:0}.good{color:var(--neon)}.info{color:var(--blue)}.warn{color:var(--yellow)}.history{display:flex;flex-direction:column;gap:7px}.historyitem{display:flex;justify-content:space-between;gap:8px;background:#09111b;border:1px solid #1b3042;border-radius:10px;padding:9px;font-size:11px}.empty{border:1px dashed #263b4c;border-radius:10px;padding:12px;text-align:center;color:var(--muted);font-size:11px}
+.colors{display:flex;gap:10px;flex-wrap:wrap}.swatch{width:31px;height:31px;border:2px solid #ffffff30;outline:2px solid transparent;outline-offset:2px;border-radius:50%}.swatch.active{outline-color:var(--text)}
+.tabs{display:flex;gap:4px;background:#080e17;padding:5px;border-bottom:1px solid #1c2c3d;overflow-x:auto}.tab{border:0;background:transparent;color:#8098ad;padding:8px 11px;border-radius:7px;font-size:11px;font-weight:800;white-space:nowrap}.tab.active{background:#16312f;color:var(--neon)}.editor{display:block;width:100%;height:255px;resize:vertical;background:#080d15;color:#d9f3ed;border:0;border-radius:0;padding:13px;font:11px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace;outline:none;tab-size:2;white-space:pre;overflow:auto}.editorfoot{display:flex;justify-content:space-between;gap:8px;padding:6px 11px;border-top:1px solid #1b2b3b;color:#71899d;font-size:9px}.toolbar{display:flex;flex-wrap:wrap;gap:7px;padding:10px;border-top:1px solid #1c2c3d}.select{background:#0a111b;border:1px solid #273d51;color:#d5e6f2;padding:7px;border-radius:8px;font-size:10px}.previewwrap{padding:10px;background:#070c13}.previewtop{display:flex;justify-content:space-between;padding:0 2px 8px;font-size:10px;color:#8199ac}.preview{width:100%;height:220px;background:white;border:1px solid #263a4b;border-radius:9px;display:block}
+.terminal{font:11px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;background:#060a10;padding:11px;min-height:110px;max-height:165px;overflow:auto;color:#91adbf;overflow-wrap:anywhere}.termline{margin:0}.termline .prefix{color:var(--neon)}.termline.error{color:#ff8fa3}.terminputrow{display:flex;gap:8px;align-items:center;background:#0b121d;border-top:1px solid #1d2c3b;padding:9px}.terminput{flex:1;background:transparent;border:0;padding:5px 0;outline:none;font:11px ui-monospace,monospace}.chatbody{padding:11px}.messages{display:flex;flex-direction:column;gap:8px;max-height:230px;min-height:125px;overflow:auto;margin-bottom:10px}.message{max-width:95%;white-space:pre-wrap;overflow-wrap:anywhere;padding:9px 10px;border:1px solid #24374a;background:#0b1521;border-radius:11px;font-size:11px;animation:rise .2s}.message.user{align-self:flex-end;background:#102b2a;border-color:#22564e}.message.bot{align-self:flex-start}.who{display:block;font-size:9px;font-weight:900;letter-spacing:.1em;color:var(--neon);margin-bottom:4px}.chatrow{display:flex;gap:7px}.chatrow input{font-size:11px;padding:10px}.subnote{font-size:9px;color:#71889a;margin:9px 0 0}
+.toolgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}.toolcard{border:1px solid #1d3043;background:#0c1420;border-radius:13px;padding:13px}.toolcard .emoji{font-size:19px}.toolcard b{display:block;font-size:11px;margin:5px 0}.toolcard p{font-size:10px;color:#8299ad;margin:0}.footer{text-align:center;color:#536e81;font-size:10px;margin-top:22px}
+.bottomnav{display:none}.toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,18px);opacity:0;pointer-events:none;background:#102435;border:1px solid #31536a;padding:10px 14px;border-radius:12px;z-index:30;box-shadow:0 12px 35px #0008;transition:.22s;max-width:90vw;text-align:center;font-size:11px}.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes pulse{50%{opacity:.35;box-shadow:0 0 3px var(--neon)}}@keyframes rise{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:850px){.span-8,.span-4,.span-6{grid-column:span 12}.editor{height:245px}.preview{height:210px}}
+@media(max-width:560px){.app{padding:11px 10px 88px}.brand h1{font-size:13px}.brand p{font-size:8px}.logo{width:39px;height:39px}.topright .pill{display:none}.hero{padding:18px 15px}.hero h2{font-size:29px}.hero p{max-width:88%}.hero:after{right:12px;font-size:70px}.hero .btn{font-size:10px;padding:9px}.panelhead{padding:10px}.paneltitle{font-size:11px}.pad{padding:11px}.stats{gap:6px}.stat{padding:9px}.stat strong{font-size:20px}.editor{height:225px;font-size:10px;padding:10px}.preview{height:195px}.toolgrid{grid-template-columns:1fr}.bottomnav{position:fixed;z-index:20;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;left:9px;right:9px;bottom:calc(7px + env(safe-area-inset-bottom));padding:6px;background:#09111def;border:1px solid #263e51;border-radius:16px;box-shadow:0 12px 40px #000a;backdrop-filter:blur(16px)}.bottomnav button{border:0;background:transparent;color:#7e98ab;font-size:9px;font-weight:800;padding:7px 2px;border-radius:9px}.bottomnav button b{display:block;font-size:16px}.bottomnav button.active{background:#15312f;color:var(--neon)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar" id="home">
+ <div class="brand"><div class="logo">YD</div><div><h1>AM PREMIUM SELAX</h1><p>POWERED BY YUND DEV STUDIO</p></div></div>
+ <div class="topright"><span class="pill"><i class="dot"></i>VERCEL READY</span><button class="btn sm" id="resetAll">Reset</button></div>
+</header>
+<section class="hero">
+ <div class="eyebrow">AM PREMIUM SELAX × YUND DEV</div>
+ <h2>Member interface.<br><span>Developer power.</span></h2>
+ <p>Dashboard neon YUND DEV dengan coding studio, preview HTML/CSS/JS, Motion Lab, terminal simulasi, dan YUND AI yang terhubung ke backend online saat sudah di-deploy di Vercel.</p>
+ <div class="actions"><button class="btn primary" data-scroll="coding">⌘ Buka YUND DEV</button><button class="btn" data-scroll="activity">⚡ Panel Aktivitas</button><button class="btn" data-scroll="theme">◉ Ubah Tema</button></div>
+</section>
+<div class="notice">☁️ <b>YUND DEV Online:</b> chat AI memakai backend serverless <code>/api/chat</code> setelah deployment Vercel dan konfigurasi <code>OPENAI_API_KEY</code>. Editor, preview, tema, dan riwayat aktivitas tetap berjalan di browser; sistem akun dan email belum diaktifkan.</div>
+
+<main class="grid">
+<section class="panel span-8" id="activity">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">⚡</span> AM SELAX / AKTIVITAS</div><span class="tag">LOCAL DEMO</span></div>
+ <div class="pad">
+  <div class="stats"><div class="stat"><label>TOTAL AKTIVITAS</label><strong id="total">0</strong></div><div class="stat"><label>HARI INI</label><strong id="today">0</strong></div><div class="stat"><label>STATUS</label><strong><em>READY</em></strong></div></div>
+  <div class="field"><label for="email">Alamat email untuk simulasi</label><input id="email" type="email" autocomplete="off" placeholder="nama@contoh.com" maxlength="120"></div>
+  <div class="row"><button class="btn primary" id="createActivity">✉ Buat Aktivitas</button><button class="btn blue" id="verifyActivity">✓ Simulasikan Verifikasi</button></div>
+  <p class="muted">Alamat hanya dipakai sebagai label lokal; tidak ada email atau tautan verifikasi yang dikirim.</p>
+  <div style="height:9px"></div><div class="paneltitle" style="margin-bottom:9px">TERMINAL LOG <span class="pill">STANDBY</span></div><div class="log" id="log" aria-live="polite"><p class="good">[SYSTEM] AM Selax + YUND DEV siap.</p><p class="info">[READY] Semua interaksi berjalan lokal.</p></div>
+ </div>
+</section>
+<section class="panel span-4" id="historyPanel">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">◷</span> RIWAYAT</div><button class="btn sm" id="clearHistory">Hapus</button></div>
+ <div class="pad"><div class="history" id="history"><div class="empty">Belum ada aktivitas.</div></div></div>
+</section>
+<section class="panel span-6" id="theme">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">◉</span> PERSONALISASI</div><span class="tag">THEME LAB</span></div>
+ <div class="pad"><p class="muted">Warna aksen dashboard dan studio YUND DEV.</p><div class="colors">
+ <button class="swatch active" data-color="#39f5c5" style="background:#39f5c5" aria-label="Hijau neon"></button><button class="swatch" data-color="#4dbbff" style="background:#4dbbff" aria-label="Biru neon"></button><button class="swatch" data-color="#a78bfa" style="background:#a78bfa" aria-label="Ungu neon"></button><button class="swatch" data-color="#ff61c7" style="background:#ff61c7" aria-label="Pink neon"></button><button class="swatch" data-color="#ffd166" style="background:#ffd166" aria-label="Kuning neon"></button>
+ </div><div class="field"><label for="displayName">Nama tampilan</label><input id="displayName" maxlength="32" placeholder="Nama developer (opsional)"></div><button class="btn" id="savePrefs">Simpan Tampilan</button><p class="muted" id="welcome">Selamat datang di AM Selax × YUND Dev.</p></div>
+</section>
+<section class="panel span-6" id="member">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">♛</span> MEMBER AREA</div><span class="tag">DEMO</span></div>
+ <div class="pad"><p class="muted">Panel UI member yang bisa dikembangkan sesuai kebutuhan. Ini bukan sistem akun atau membership sungguhan.</p><div class="row"><button class="btn" id="memberInfo">Status Member</button><button class="btn" id="systemInfo">Info Sistem</button></div><div style="height:12px"></div><div class="toolgrid"><div class="toolcard"><div class="emoji">✦</div><b>YUND DEV</b><p>Mini coding studio.</p></div><div class="toolcard"><div class="emoji">⚡</div><b>Aktivitas</b><p>Riwayat simulasi.</p></div><div class="toolcard"><div class="emoji">◉</div><b>Neon UI</b><p>Tema yang dapat diubah.</p></div></div></div>
+</section>
+
+<section class="panel span-12" id="coding">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">&lt;/&gt;</span> YUND DEV / CODING STUDIO</div><span class="tag">HTML · CSS · JS</span></div>
+ <div class="tabs" role="tablist" aria-label="Bahasa editor"><button class="tab active" data-lang="html" role="tab" aria-selected="true">index.html</button><button class="tab" data-lang="css" role="tab" aria-selected="false">style.css</button><button class="tab" data-lang="js" role="tab" aria-selected="false">script.js</button></div>
+ <textarea class="editor" id="editor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Editor kode"></textarea>
+ <div class="editorfoot"><span id="fileLabel">index.html · HTML</span><span id="lineCount">UTF-8 · LOCAL</span></div>
+ <div class="toolbar"><button class="btn primary" id="runCode">▶ Run Preview</button><button class="btn" id="saveCode">↓ Simpan .html</button><button class="btn" id="copyCode">Salin Kode</button><button class="btn" id="loadSample">Muat Contoh</button><select class="select" id="fontSize" aria-label="Ukuran font"><option value="10">Font 10</option><option value="11" selected>Font 11</option><option value="13">Font 13</option><option value="15">Font 15</option></select></div>
+ <div class="previewwrap" id="previewSection"><div class="previewtop"><span>LIVE PREVIEW</span><span id="previewStatus">Preview siap</span></div><iframe class="preview" id="preview" title="Pratinjau kode" sandbox="allow-scripts"></iframe></div>
+</section>
+
+<section class="panel span-12" id="motionLab">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">✦</span> YUND MOTION LAB</div><span class="tag">FREE ANIMATION STUDIO</span></div>
+ <div class="pad">
+  <p class="muted">Buat animasi teks sederhana langsung di browser, lalu ekspor menjadi HTML. Ini studio animasi mandiri—bukan pembuka fitur premium Alight Motion.</p>
+  <div class="toolgrid">
+   <div class="toolcard"><label for="motionText">Teks animasi</label><input id="motionText" class="terminput" style="width:100%;border:1px solid var(--line);border-radius:10px;padding:12px" maxlength="50" value="YUND DEV" /></div>
+   <div class="toolcard"><label for="motionPreset">Efek animasi</label><select id="motionPreset" class="select" style="width:100%;margin-top:8px"><option value="float">Float / Mengambang</option><option value="pulse">Pulse / Berdenyut</option><option value="spin">Spin / Berputar</option><option value="slide">Slide / Meluncur</option><option value="glow">Neon Glow</option></select></div>
+   <div class="toolcard"><label for="motionSpeed">Kecepatan: <span id="speedLabel">2.0</span> detik</label><input id="motionSpeed" type="range" min="0.5" max="5" step="0.5" value="2" style="width:100%;margin-top:12px" /></div>
+   <div class="toolcard"><label for="motionColor">Warna teks</label><input id="motionColor" type="color" value="#39f5c5" style="display:block;margin-top:10px;width:100%;height:38px;border:0;background:transparent" /></div>
+  </div>
+  <div id="motionPreview" style="margin-top:16px;min-height:190px;display:grid;place-items:center;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:radial-gradient(ellipse at center,#12303b,#070a12 70%);padding:20px"><div id="motionObject" style="font-size:clamp(30px,8vw,56px);font-weight:950;letter-spacing:.06em;text-align:center;color:#39f5c5;text-shadow:0 0 22px currentColor">YUND DEV</div></div>
+  <div class="toolbar" style="margin-top:12px"><button class="btn primary" id="motionPlay">▶ Putar Animasi</button><button class="btn" id="motionStop">■ Berhenti</button><button class="btn" id="motionExport">↓ Ekspor HTML Animasi</button></div>
+  <p class="subnote">Ekspor menghasilkan file HTML animasi yang dapat dibuka offline di browser. Tidak membuka atau mengubah status langganan aplikasi pihak lain.</p>
+ </div>
+</section>
+
+<section class="panel span-6" id="terminalPanel">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">&gt;_</span> TERMINAL SIMULASI</div><button class="btn sm" id="clearTerminal">Bersihkan</button></div>
+ <div class="terminal" id="terminal" aria-live="polite"><p class="termline"><span class="prefix">yund@dev:~$</span> studio --status</p><p class="termline">Terminal simulasi siap. Ketik help.</p></div>
+ <form class="terminputrow" id="terminalForm"><span style="color:var(--neon)">❯</span><input class="terminput" id="terminalInput" placeholder="help, date, files..." aria-label="Perintah terminal" autocomplete="off"><button class="btn sm primary">Run</button></form>
+</section>
+<section class="panel span-6" id="aiPanel">
+ <div class="panelhead"><div class="paneltitle"><span class="iconbox">✦</span> YUND DEV AI</div><span class="tag" id="aiStatus" style="color:var(--purple)">AI ONLINE · API</span></div>
+ <div class="chatbody"><div class="messages" id="messages" aria-live="polite"><div class="message bot"><span class="who">YUND ASSIST</span>Hai developer! Aku YUND AI. Tanyakan coding, debugging, desain web, atau ide proyek. Chat akan dikirim ke backend AI setelah website di-deploy dan API key dikonfigurasi.</div></div>
+ <form class="chatrow" id="chatForm"><input id="chatInput" maxlength="8000" placeholder="Tanya apa saja ke YUND AI..." autocomplete="off" aria-label="Pesan untuk YUND Dev AI"><button class="btn primary">Kirim</button></form><p class="subnote" id="aiNote">Backend: /api/chat · Kunci API disimpan di Environment Variables Vercel, bukan di HTML.</p></div>
+</section>
+</main>
+<footer class="footer">AM PREMIUM SELAX × YUND DEV • VERCEL AI STUDIO • <span id="year"></span></footer>
+</div>
+<nav class="bottomnav" aria-label="Navigasi bawah"><button class="active" data-scroll="home"><b>⌂</b>Home</button><button data-scroll="activity"><b>⚡</b>Aktivitas</button><button data-scroll="coding"><b>&lt;/&gt;</b>YUND Dev</button><button data-scroll="aiPanel"><b>✦</b>AI Chat</button></nav>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(() => {
+'use strict';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const KEY='amSelaxYundDevLocal_v1', day=()=>new Date().toLocaleDateString('sv-SE');
+let state={items:[],color:'#39f5c5',name:''},timer;
+const files={
+html:`<!doctype html>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YUND Project</title></head>
+<body>
+  <main class="card">
+    <div class="badge">YUND DEV</div>
+    <h1>Halo, Developer! <span>✦</span></h1>
+    <p>Selamat datang di project pertamamu.</p>
+    <button id="helloBtn">Klik aku</button>
+    <p id="message">Siap mulai membuat sesuatu?</p>
+  </main>
+</body>
+</html>`,
+css:`*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;font-family:system-ui,sans-serif;color:#eaf5ff;background:radial-gradient(circle at top,#16433c,#080d16 65%)}
+.card{width:min(100%,520px);padding:30px;border:1px solid #2b5d56;border-radius:22px;background:#0d1725;box-shadow:0 20px 70px #0008}
+.badge{color:#39f5c5;font-size:11px;letter-spacing:.2em;font-weight:900}
+h1{font-size:clamp(28px,7vw,44px);line-height:1.1}h1 span{color:#39f5c5}
+p{color:#a6bdcf;line-height:1.7}
+button{border:0;border-radius:10px;padding:12px 18px;background:#39f5c5;color:#04130f;font-weight:850}`,
+js:`const button=document.querySelector('#helloBtn');
+const message=document.querySelector('#message');
+button?.addEventListener('click',()=>{
+  message.textContent='Berhasil! JavaScript berjalan.';
+  button.textContent='Sukses ✓';
+});
+console.log('YUND DEV project loaded');`
+};
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(timer);timer=setTimeout(()=>e.classList.remove('show'),2400)}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+function log(t,cls='good'){const p=document.createElement('p');p.className=cls;p.textContent=`[${new Date().toLocaleTimeString('id-ID')}] ${t}`;$('#log').prepend(p);while($('#log').children.length>15)$('#log').lastElementChild.remove()}
+function term(t,cls=''){const p=document.createElement('p');p.className='termline '+cls;p.textContent=t;$('#terminal').append(p);$('#terminal').scrollTop=$('#terminal').scrollHeight}
+function render(){
+ $('#total').textContent=state.items.length;$('#today').textContent=state.items.filter(x=>x.day===day()).length;
+ const h=$('#history');h.replaceChildren();
+ if(!state.items.length){const e=document.createElement('div');e.className='empty';e.textContent='Belum ada aktivitas.';h.append(e)}
+ state.items.slice().reverse().slice(0,8).forEach(x=>{const r=document.createElement('div');r.className='historyitem';const a=document.createElement('span'),b=document.createElement('span');a.textContent=x.label;b.textContent=x.time;b.style.color='var(--muted)';r.append(a,b);h.append(r)});
+ document.documentElement.style.setProperty('--neon',state.color);
+ $$('.swatch').forEach(b=>b.classList.toggle('active',b.dataset.color===state.color));
+ $('#displayName').value=state.name;$('#welcome').textContent=state.name?`Selamat datang, ${state.name}. Preferensi tersimpan lokal.`:'Selamat datang di AM Selax × YUND Dev.';
+ persist();
+}
+function addActivity(label){const d=new Date();state.items.push({label,time:d.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),day:day()});state.items=state.items.slice(-50);render()}
+function switchLang(l){files[active]= $('#editor').value;active=l;$('#editor').value=files[l];$$('.tab').forEach(t=>{let on=t.dataset.lang===l;t.classList.toggle('active',on);t.setAttribute('aria-selected',String(on))});$('#fileLabel').textContent=({html:'index.html · HTML',css:'style.css · CSS',js:'script.js · JAVASCRIPT'})[l];count()}
+function count(){$('#lineCount').textContent=`${$('#editor').value.split('\n').length} baris · LOCAL`}
+let active='html';
+function compose(){files[active]=$('#editor').value;let h=files.html,c=files.css,j=files.js;
+ if(/<\/head\s*>/i.test(h))h=h.replace(/<\/head\s*>/i,`<style>\n${c}\n</style>\n</head>`);else h=`<style>\n${c}\n</style>\n`+h;
+ j=j.replace(/<\/script/gi,'<\\/script');
+ if(/<\/body\s*>/i.test(h))h=h.replace(/<\/body\s*>/i,`<script>\n${j}\n<\/script>\n</body>`);else h+=`<script>\n${j}\n<\/script>`;
+ return h}
+function run(){const doc=compose();$('#preview').srcdoc=doc;$('#previewStatus').textContent='Dijalankan '+new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});term('Preview diperbarui.','info');toast('Kode dijalankan di preview.')}
+$$('.tab').forEach(t=>t.addEventListener('click',()=>switchLang(t.dataset.lang)));
+$('#editor').addEventListener('input',()=>{files[active]=$('#editor').value;count()});
+$('#editor').addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();const x=e.target,s=x.selectionStart,en=x.selectionEnd;x.setRangeText('  ',s,en,'end');files[active]=x.value;count()}if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();run()}});
+$('#fontSize').addEventListener('change',e=>$('#editor').style.fontSize=e.target.value+'px');
+$('#runCode').addEventListener('click',run);
+$('#loadSample').addEventListener('click',()=>{files.html=`<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Neon Card</title></head><body><main class="card"><small>YUND LAB / 02</small><h1>Build the future<span>.</span></h1><p>Ide kecil hari ini bisa menjadi proyek besar besok.</p><button id="magic">Aktifkan efek</button><p id="result">Status: standby</p></main></body></html>`;files.css=`*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:#080d16;color:#eaf5ff;font-family:system-ui}.card{width:min(100%,500px);padding:32px;border:1px solid #2b5d56;border-radius:24px;background:linear-gradient(145deg,#112c2b,#0d1524);box-shadow:0 20px 70px #0008}small{color:#39f5c5;letter-spacing:.2em;font-weight:900}h1{font-size:clamp(30px,8vw,52px);line-height:1.1}h1 span{color:#39f5c5}p{color:#a6bdcf;line-height:1.7}button{padding:12px 17px;border:0;border-radius:10px;background:#39f5c5;color:#04130f;font-weight:900}body.active .card{border-color:#a78bfa;box-shadow:0 0 55px #a78bfa44}`;files.js=`document.querySelector('#magic')?.addEventListener('click',()=>{document.body.classList.toggle('active');document.querySelector('#result').textContent='Status: efek diubah ✓'});`;switchLang('html');run();toast('Contoh YUND dimuat.')});
+$('#saveCode').addEventListener('click',()=>{const blob=new Blob([compose()],{type:'text/html;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='am-selax-yund-dev.html';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('File HTML gabungan diunduh.')});
+$('#copyCode').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#editor').value);toast('Kode disalin.')}catch(e){$('#editor').focus();$('#editor').select();toast('Pilih kode lalu gunakan Salin dari browser.')}});
+$('#createActivity').addEventListener('click',()=>{const v=$('#email').value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){toast('Masukkan alamat contoh dengan format yang benar.');$('#email').focus();return}addActivity('Aktivitas dibuat');log(`Aktivitas lokal dibuat untuk ${v}; tidak ada email dikirim.`);toast('Aktivitas simulasi dibuat.')});
+$('#verifyActivity').addEventListener('click',()=>{const v=$('#email').value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){toast('Isi alamat email contoh terlebih dahulu.');$('#email').focus();return}addActivity('Verifikasi simulasi');log(`Verifikasi simulasi untuk ${v}; tidak ada tautan diperiksa.`,'info');toast('Simulasi verifikasi selesai.')});
+$('#clearHistory').addEventListener('click',()=>{state.items=[];render();log('Riwayat lokal dihapus.','warn');toast('Riwayat dihapus.')});
+$$('.swatch').forEach(b=>b.addEventListener('click',()=>{state.color=b.dataset.color;render();log('Warna tema diperbarui.','info')}));
+$('#savePrefs').addEventListener('click',()=>{state.name=$('#displayName').value.trim().slice(0,32);render();toast('Preferensi disimpan lokal.')});
+function info(title,msg){const shade=document.createElement('div');shade.style.cssText='position:fixed;inset:0;z-index:50;background:#02050bdc;display:grid;place-items:center;padding:20px';const box=document.createElement('div');box.style.cssText='max-width:400px;width:100%;padding:22px;border-radius:18px;border:1px solid #2a4c5d;background:#0d1725;box-shadow:0 25px 90px #000b';const h=document.createElement('h3');h.textContent=title;const p=document.createElement('p');p.textContent=msg;p.style.color='#8ca4b8';const b=document.createElement('button');b.className='btn primary';b.textContent='Tutup';b.onclick=()=>shade.remove();box.append(h,p,b);shade.append(box);shade.addEventListener('click',e=>{if(e.target===shade)shade.remove()});document.body.append(shade)}
+$('#memberInfo').addEventListener('click',()=>info('Status Member','YUND AI dirancang untuk berjalan online di Vercel. Sistem akun, member, dan VVIP belum dibuat.'));
+$('#systemInfo').addEventListener('click',()=>info('Info Sistem','YUND AI memakai serverless API /api/chat di Vercel dan OpenAI Responses API. Editor/preview berjalan di browser. Pastikan OPENAI_API_KEY sudah ditambahkan pada Vercel Project Settings > Environment Variables.'));
+$('#terminalForm').addEventListener('submit',e=>{e.preventDefault();const input=$('#terminalInput'),raw=input.value.trim();if(!raw)return;term('yund@dev:~$ '+raw);input.value='';const [cmd,...args]=raw.split(/\s+/),rest=args.join(' ');switch(cmd.toLowerCase()){case'help':term('Perintah: help, clear, date, about, echo <teks>, files, run, tips','info');break;case'clear':$('#terminal').replaceChildren();break;case'date':term(new Date().toString(),'info');break;case'about':term('Terminal simulasi lokal; tidak menjalankan perintah sistem.','info');break;case'echo':term(rest);break;case'files':term('index.html   style.css   script.js','info');break;case'run':run();break;case'tips':term('Edit tab HTML/CSS/JS, lalu tekan Run Preview.','info');break;default:term(`Perintah "${cmd}" tidak dikenal. Ketik help.`,'error')}});
+let chatHistory=[];
+let chatBusy=false;
+async function sendToYundAI(q){
+ if(chatBusy)return;
+ chatBusy=true;
+ const input=$('#chatInput'),button=$('#chatForm button'),status=$('#aiStatus'),note=$('#aiNote');
+ button.disabled=true;button.textContent='Memproses…';status.textContent='MENGHUBUNGI API…';status.style.color='var(--yellow)';
+ const pending=document.createElement('div');pending.className='message bot';pending.id='aiPending';pending.textContent='YUND AI sedang berpikir…';$('#messages').append(pending);$('#messages').scrollTop=$('#messages').scrollHeight;
+ try{
+  const res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:[...chatHistory,{role:'user',content:q}].slice(-12)})});
+  const data=await res.json().catch(()=>({}));
+  if(!res.ok)throw new Error(data.error||`Server merespons HTTP ${res.status}`);
+  const answer=typeof data.reply==='string'?data.reply.trim():'';
+  if(!answer)throw new Error('Respons AI kosong. Coba lagi.');
+  chatHistory.push({role:'user',content:q},{role:'assistant',content:answer});chatHistory=chatHistory.slice(-12);
+  pending.remove();addMessage('YUND AI',answer,'bot');status.textContent='AI ONLINE';status.style.color='var(--neon)';note.textContent='Terhubung ke /api/chat · Model: '+(data.model||'model server');
+ }catch(err){pending.remove();addMessage('YUND AI',`Tidak dapat menghubungi backend: ${err.message}\n\nPastikan website dibuka melalui deployment Vercel (bukan file://), dan OPENAI_API_KEY sudah disetel di Project Settings → Environment Variables. Setelah menambah variabel, lakukan redeploy.`,'bot');status.textContent='API PERLU DICEK';status.style.color='var(--pink)';note.textContent='Periksa deployment Vercel dan konfigurasi environment variables.';}
+ finally{chatBusy=false;button.disabled=false;button.textContent='Kirim';input.focus();}
+}
+function addMessage(who,text,cls){const d=document.createElement('div');d.className='message '+cls;const w=document.createElement('span');w.className='who';w.textContent=who;const t=document.createElement('span');t.textContent=text;d.append(w,t);$('#messages').append(d);$('#messages').scrollTop=$('#messages').scrollHeight}
+$('#chatForm').addEventListener('submit',async e=>{e.preventDefault();const i=$('#chatInput'),q=i.value.trim();if(!q||chatBusy)return;addMessage('KAMU',q,'user');i.value='';await sendToYundAI(q)});
+$$('[data-scroll]').forEach(b=>b.addEventListener('click',()=>{document.getElementById(b.dataset.scroll)?.scrollIntoView({behavior:'smooth',block:'start'});$$('.bottomnav button').forEach(x=>x.classList.toggle('active',x===b))}));
+$('#resetAll').addEventListener('click',()=>{state={items:[],color:'#39f5c5',name:''};try{localStorage.removeItem(KEY)}catch(e){}files.html='<!doctype html>\n<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YUND Project</title></head><body><h1>Mulai coding di YUND DEV</h1><p>Tulis kode kamu di editor.</p></body></html>';files.css='body{font-family:system-ui,sans-serif;padding:30px;background:#f5f7fa;color:#18202b}h1{color:#126b60}';files.js="console.log('YUND DEV siap!');";switchLang('html');render();$('#terminal').replaceChildren();term('Workspace direset.','info');run();toast('Workspace direset.')});
+
+const motionText=$('#motionText'),motionPreset=$('#motionPreset'),motionSpeed=$('#motionSpeed'),motionColor=$('#motionColor'),motionObject=$('#motionObject');
+function updateMotion(play=true){const text=motionText.value.trim()||'YUND DEV',preset=motionPreset.value,duration=Number(motionSpeed.value),color=motionColor.value;motionObject.textContent=text;motionObject.style.color=color;motionObject.style.animation='none';motionObject.style.textShadow='0 0 22px '+color;$('#speedLabel').textContent=duration.toFixed(1);if(play){void motionObject.offsetWidth;motionObject.style.animation=preset+' '+duration+'s ease-in-out infinite';}}
+const motionStyle=document.createElement('style');motionStyle.textContent='@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes slide{0%,100%{transform:translateX(-28px);opacity:.65}50%{transform:translateX(28px);opacity:1}}@keyframes glow{0%,100%{filter:brightness(.8);text-shadow:0 0 8px currentColor}50%{filter:brightness(1.8);text-shadow:0 0 35px currentColor,0 0 60px currentColor}}';document.head.append(motionStyle);
+$('#motionPlay').addEventListener('click',()=>updateMotion(true));$('#motionStop').addEventListener('click',()=>{motionObject.style.animation='none';toast('Animasi dihentikan.')});[motionText,motionPreset,motionSpeed,motionColor].forEach(el=>el.addEventListener('input',()=>updateMotion(true)));
+$('#motionExport').addEventListener('click',()=>{const t=(motionText.value.trim()||'YUND DEV').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),preset=motionPreset.value,duration=Number(motionSpeed.value),color=motionColor.value;const html='<!doctype html><html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>YUND Motion</title><style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;background:radial-gradient(ellipse,#12303b,#070a12 70%);font-family:system-ui;color:'+color+'}.motion{font-size:clamp(30px,8vw,56px);font-weight:950;letter-spacing:.06em;text-align:center;text-shadow:0 0 22px currentColor;animation:'+preset+' '+duration+'s ease-in-out infinite}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes slide{0%,100%{transform:translateX(-28px);opacity:.65}50%{transform:translateX(28px);opacity:1}}@keyframes glow{0%,100%{filter:brightness(.8);text-shadow:0 0 8px currentColor}50%{filter:brightness(1.8);text-shadow:0 0 35px currentColor,0 0 60px currentColor}}</style><div class="motion">'+t+'</div></html>';const blob=new Blob([html],{type:'text/html'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='yund-motion.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('File animasi HTML diekspor.');});
+
+$('#year').textContent=new Date().getFullYear();
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&typeof s==='object'){state.items=Array.isArray(s.items)?s.items.slice(-50):[];state.color=/^#[0-9a-f]{6}$/i.test(s.color||'')?s.color:'#39f5c5';state.name=typeof s.name==='string'?s.name.slice(0,32):''}}catch(e){}
+render();switchLang('html');run();
+})();
+</script>
+</body>
+</html>
